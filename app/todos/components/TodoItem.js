@@ -21,7 +21,7 @@ export default function TodoItem({
       <input
         type="checkbox"
         checked={todo.completed}
-        onChange={() => onToggle(todo.id)}
+        onChange={() => onToggle(todo._id)}
       />
 
       <span

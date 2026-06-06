@@ -55,7 +55,10 @@ export default function TodosPage() {
     });
   }
   async function toggleTodo(id) {
-    const todoToUpdate = todos.find((todo) => todo.id === id);
+    const todoToUpdate = todos.find((todo) => {
+      console.log(todo._id, id);
+      return todo._id === id;
+    });
     console.log("Toggling todo:", todoToUpdate);
     if (!todoToUpdate) return;
 
