@@ -49,7 +49,7 @@ export default function TodosPage() {
   }
   function deleteTodoItem(id) {
     deleteTodo(id).then(() => {
-      setTodos((prev) => prev.filter((todo) => todo.id !== id));
+      setTodos((prev) => prev.filter((todo) => todo._id !== id));
     });
   }
   async function toggleTodo(id) {
