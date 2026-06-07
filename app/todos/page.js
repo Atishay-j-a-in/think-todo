@@ -29,9 +29,7 @@ export default function TodosPage() {
    
   }, []);
 
-  useEffect(() => {
-    console.log("Todos updated:", todos);
-  }, [todos]);
+ 
 
   function addTodo() {
     if (!text.trim()) return;
@@ -56,15 +54,15 @@ export default function TodosPage() {
   }
   async function toggleTodo(id) {
     const todoToUpdate = todos.find((todo) => {
-      console.log(todo._id, id);
+    
       return todo._id === id;
     });
-    console.log("Toggling todo:", todoToUpdate);
+   
     if (!todoToUpdate) return;
 
     const updatedTodo = { ...todoToUpdate, completed: !todoToUpdate.completed };
    const update=await updateTodo(updatedTodo)
-   console.log("Updated todo id:", update);
+  
     setTodos((prev) =>
       prev.map((todo) => (todo._id === update ? { ...todo, completed: !todo.completed } : todo))
     );

@@ -43,9 +43,9 @@ export async function PUT(request){ //update a todo
 
 export async function DELETE(request){ //delete a todo
     const data = await request.json();
-    console.log("Deleting todo with id:",typeof data.id);
+  
     const {errors, value} = DeleteTodoDto.validate({id:data.id});
-    console.log("data:", value);
+
     if(errors){
         return NextResponse.json({errors}, {status : 400})
     }
